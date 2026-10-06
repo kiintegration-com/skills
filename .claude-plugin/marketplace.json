@@ -1,0 +1,24 @@
+{
+  "name": "kiintegration",
+  "owner": {
+    "name": "kiintegration.com",
+    "email": "info@kiintegration.com",
+    "url": "https://kiintegration.com"
+  },
+  "metadata": {
+    "description": "Skills für kleine und mittlere Unternehmen im DACH-Raum, von kiintegration.com.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "kmu-skills",
+      "source": "./",
+      "description": "20 Skills für KMU in Deutschland, Österreich und der Schweiz: Kalkulation, Rechnungsprüfung, Mahnung, Fristen, Ausschreibung, DSGVO, KI-Verordnung und mehr.",
+      "version": "1.0.0",
+      "author": { "name": "kiintegration.com" },
+      "homepage": "https://kiintegration.com/prompts/skills/",
+      "license": "CC-BY-4.0",
+      "category": "productivity"
+    }
+  ]
+}

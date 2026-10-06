@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Sicherheitsproblem melden
+    url: https://github.com/kiintegration-com/skills/blob/main/SECURITY.md
+    about: Bitte nicht öffentlich, sondern per Mail wie in SECURITY.md beschrieben.
+  - name: Dienstleister für die Umsetzung finden
+    url: https://kiintegration.com/anfrage/?utm_source=github&utm_medium=referral&utm_campaign=skills
+    about: Soll ein Skill an Ihre Systeme angebunden werden, finden Sie im Register von kiintegration.com passende Dienstleister.

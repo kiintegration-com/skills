@@ -1,0 +1,77 @@
+name: Fehler melden
+description: Ein Skill rechnet falsch, nennt eine veraltete Vorschrift oder liefert nicht das versprochene Format.
+title: "Fehler: "
+labels: ["fehler"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Bitte keine echten Kunden-, Beschäftigten- oder Zugangsdaten einfügen. Ersetzen Sie sie durch Platzhalter, zum Beispiel mit dem Skill `pseudonymisieren`.
+  - type: dropdown
+    id: skill
+    attributes:
+      label: Welcher Skill?
+      options:
+        - kalkulationsschema
+        - aufwandsschaetzung
+        - nachfassen
+        - ausschreibung-pruefen
+        - rechnungspruefung
+        - zahlungserinnerung
+        - angebotsvergleich
+        - hausstil
+        - anfragen-sortieren
+        - protokoll-zu-aufgaben
+        - fristenwaechter
+        - tabelle-saeubern
+        - kennzahlen-bericht
+        - antworten-aus-unterlagen
+        - dsgvo-vorpruefung
+        - pseudonymisieren
+        - ki-vo-einordnung
+        - spec-vor-code
+        - sicherheits-kurzpruefung
+        - uebergabe-doku
+        - anderes (Repo, Anleitung, Skript)
+    validations:
+      required: true
+  - type: dropdown
+    id: art
+    attributes:
+      label: Art des Fehlers
+      options:
+        - Rechnung oder Zahl falsch
+        - Vorschrift veraltet oder falsch zitiert
+        - Ausgabeformat nicht eingehalten
+        - Skill wird nicht geladen oder nicht erkannt
+        - Sonstiges
+    validations:
+      required: true
+  - type: dropdown
+    id: werkzeug
+    attributes:
+      label: Werkzeug
+      options:
+        - Claude Code
+        - Claude.ai oder Claude Desktop
+        - Claude API
+        - ChatGPT
+        - Gemini
+        - Microsoft 365 Copilot
+        - anderes
+    validations:
+      required: true
+  - type: textarea
+    id: eingabe
+    attributes:
+      label: Eingabe
+      description: Was Sie dem Modell gegeben haben, mit Platzhaltern statt echter Daten.
+    validations:
+      required: true
+  - type: textarea
+    id: ergebnis
+    attributes:
+      label: Ergebnis und was richtig wäre
+      description: Bei Vorschriften bitte die Fundstelle angeben.
+    validations:
+      required: true

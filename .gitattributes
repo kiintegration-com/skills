@@ -1,0 +1,8 @@
+* text=auto eol=lf
+*.png binary
+*.svg text eol=lf
+*.zip binary
+
+# Die Sprachstatistik von GitHub soll die Skills zeigen, nicht das Prüfskript.
+*.md linguist-documentation=false linguist-detectable=true
+scripts/** linguist-vendored

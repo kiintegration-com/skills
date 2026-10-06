@@ -1,0 +1,38 @@
+name: Release
+
+# Ein Tag v* erzeugt ein Release mit einem ZIP je Skill. Claude.ai und
+# Claude Desktop nehmen Skills nur als ZIP an; so muss niemand selbst packen.
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  zips:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/validate.mjs
+      - name: ZIP je Skill
+        run: |
+          mkdir -p dist
+          cd skills
+          for d in */; do
+            name="${d%/}"
+            zip -qr "../dist/${name}.zip" "$name"
+          done
+          cd ..
+          zip -qr "dist/alle-skills.zip" skills
+      - name: Release anlegen
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" dist/*.zip \
+            --title "$GITHUB_REF_NAME" \
+            --notes "Änderungen: siehe [CHANGELOG.md](https://github.com/${GITHUB_REPOSITORY}/blob/main/CHANGELOG.md). Je Skill ein ZIP zum Hochladen in Claude.ai; alle-skills.zip enthält alle Ordner."

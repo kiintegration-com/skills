@@ -1,0 +1,28 @@
+name: Prüfung
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    # Montags 06:00 UTC: Links nach außen veralten auch ohne Änderung im Repo.
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  skills:
+    name: Skills und Links
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Kopf, Abschnitte und Links im Repo
+        run: node scripts/validate.mjs
+      - name: Links nach außen
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        run: node scripts/validate.mjs --extern

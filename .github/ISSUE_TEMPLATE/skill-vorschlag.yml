@@ -1,0 +1,40 @@
+name: Skill vorschlagen
+description: Ein Skill, den viele Betriebe brauchen und der hier fehlt.
+title: "Skill-Vorschlag: "
+labels: ["vorschlag"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Danke. Bitte beschreiben Sie den Fall aus dem Betrieb, nicht die Technik. Skills, die über Menschen entscheiden (Bewerbungen, Leistungsbeurteilung, Kreditwürdigkeit), nehmen wir nicht auf; siehe CONTRIBUTING.md.
+  - type: input
+    id: aufgabe
+    attributes:
+      label: Welche Aufgabe soll der Skill übernehmen?
+      placeholder: "z. B. Lieferscheine gegen Bestellungen abgleichen"
+    validations:
+      required: true
+  - type: textarea
+    id: heute
+    attributes:
+      label: Wie wird das heute erledigt, und wie oft?
+      placeholder: "z. B. von Hand in Excel, etwa 40 Lieferscheine pro Woche"
+    validations:
+      required: true
+  - type: textarea
+    id: ausgabe
+    attributes:
+      label: Wie sähe ein gutes Ergebnis aus?
+      description: Eine Tabelle, ein Text, eine Liste? Ein Beispiel hilft am meisten.
+    validations:
+      required: true
+  - type: input
+    id: branche
+    attributes:
+      label: Branche und Land
+      placeholder: "z. B. Großhandel, Österreich"
+  - type: textarea
+    id: vorschriften
+    attributes:
+      label: Vorschriften, die gelten
+      description: Gesetze oder Normen, die der Skill beachten muss, mit Fundstelle, falls bekannt.

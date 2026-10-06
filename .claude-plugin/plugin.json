@@ -1,0 +1,14 @@
+{
+  "name": "kmu-skills",
+  "version": "1.0.0",
+  "description": "20 Skills für kleine und mittlere Unternehmen in Deutschland, Österreich und der Schweiz: Kalkulation, Rechnungsprüfung, Mahnung, Fristen, Ausschreibung, DSGVO, KI-Verordnung und mehr.",
+  "author": {
+    "name": "kiintegration.com",
+    "email": "info@kiintegration.com",
+    "url": "https://kiintegration.com"
+  },
+  "homepage": "https://kiintegration.com/prompts/skills/",
+  "repository": "https://github.com/kiintegration-com/skills",
+  "license": "CC-BY-4.0",
+  "keywords": ["kmu", "mittelstand", "dach", "deutsch", "buchhaltung", "dsgvo", "ki-verordnung"]
+}
